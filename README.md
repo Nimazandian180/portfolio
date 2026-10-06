@@ -1,5 +1,8 @@
 # Nima Zandian — Portfolio
 
+GitHub Pages URL: https://nimazandian180.github.io/portfolio/
+Repository: https://github.com/Nimazandian180/portfolio
+
 A bilingual English/Persian portfolio built with Next.js, React and TypeScript. Includes seven projects, RTL layouts, native accessible project disclosures, resume downloads, contact links, and locally hosted fonts.
 
 ## Develop
