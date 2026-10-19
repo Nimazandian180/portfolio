@@ -23,6 +23,9 @@ for (const locale of ["en", "fa"]) {
           () => document.documentElement.scrollWidth <= window.innerWidth,
         ),
       ).toBe(true);
+      await expect(page.locator(".loading-screen")).toHaveCount(0, {
+        timeout: 12000,
+      });
       const details = page.locator("#project-inbox details");
       await details.locator("summary").click();
       await expect(details).toHaveAttribute("open", "");
@@ -70,9 +73,12 @@ test("keyboard disclosure and reduced-motion preferences", async ({ page }) => {
     "open",
     "",
   );
+  await expect(page.locator(".loading-screen")).toHaveCount(0, {
+    timeout: 12000,
+  });
   expect(
     await page
-      .locator(".tile-orange svg")
-      .evaluate((el) => getComputedStyle(el).animationName),
-  ).toBe("none");
+      .locator("html")
+      .evaluate((el) => getComputedStyle(el).scrollBehavior),
+  ).toBe("auto");
 });

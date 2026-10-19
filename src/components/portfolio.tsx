@@ -2,25 +2,23 @@ import Link from "next/link";
 import { assetPath } from "@/lib/paths";
 import { copy, projects, type Locale, type Project } from "@/lib/content";
 import { Arrow, Download, Asterisk } from "./icons";
-import { HeroArtwork, ProjectArtwork } from "./artwork";
-const email = "nimazandian1380@gmail.com";
+import { ProjectArtwork } from "./artwork";
+import { HeroScene } from "./hero-scene";
+import { ProjectSlider } from "./project-slider";
+import { SkillPapers } from "./skill-papers";
+const email = "nimazandian021@gmail.com";
 function ProjectStory({
   project,
   locale,
-  featured = false,
 }: {
   project: Project;
   locale: Locale;
-  featured?: boolean;
 }) {
   const t = copy[locale],
     story = project[locale];
   return (
-    <article
-      className={featured ? "featured-project" : "project-row"}
-      id={`project-${project.id}`}
-    >
-      {featured && <ProjectArtwork kind={project.id} />}
+    <article className="featured-project" id={`project-${project.id}`}>
+      <ProjectArtwork kind={project.id} />
       <div className="project-content">
         <div className="project-meta">
           <span className={`status status-${project.status}`}>
@@ -96,6 +94,10 @@ export function Portfolio({ locale }: { locale: Locale }) {
       <main id="main">
         <section className="hero wrap" aria-labelledby="hero-heading">
           <div className="hero-copy">
+            <div className="hero-name">
+              {t.name}
+              <span>{t.role}</span>
+            </div>
             <h1 id="hero-heading">
               {t.headline[0]}
               <br />
@@ -118,8 +120,7 @@ export function Portfolio({ locale }: { locale: Locale }) {
             </div>
           </div>
           <div className="hero-visual">
-            <HeroArtwork />
-            <p className="art-caption">{t.illustration}</p>
+            <HeroScene locale={locale} />
           </div>
         </section>
         <section
@@ -131,17 +132,75 @@ export function Portfolio({ locale }: { locale: Locale }) {
             <h2 id="work-heading">{t.selected}</h2>
             <p>{t.workIntro}</p>
           </div>
-          <div className="featured-grid">
-            {projects.slice(0, 2).map((p) => (
-              <ProjectStory key={p.id} project={p} locale={locale} featured />
-            ))}
-          </div>
-          <div className="project-list">
-            {projects.slice(2).map((p) => (
+          <ProjectSlider
+            locale={locale}
+            count={projects.length}
+            projectNames={projects.map((project) => project[locale].name)}
+          >
+            {projects.map((p) => (
               <ProjectStory key={p.id} project={p} locale={locale} />
             ))}
-          </div>
+          </ProjectSlider>
           <p className="art-disclaimer">{t.artNote}</p>
+        </section>
+        <section
+          className="journey section wrap"
+          aria-labelledby="journey-heading"
+        >
+          <div className="section-heading">
+            <h2 id="journey-heading">
+              {locale === "en"
+                ? "A few years. A lot of building."
+                : "چند سال، پر از ساختن."}
+            </h2>
+            <p>
+              {locale === "en"
+                ? "My development journey, from 2023 to 2026."
+                : "مسیر توسعه من، از ۲۰۲۳ تا ۲۰۲۶."}
+            </p>
+          </div>
+          <ol className="timeline" dir="ltr">
+            {[2023, 2024, 2025, 2026].map((year, i) => (
+              <li key={year} dir={locale === "fa" ? "rtl" : "ltr"}>
+                <time dateTime={String(year)}>{year}</time>
+                <i aria-hidden="true" />
+                <h3>
+                  {
+                    (locale === "en"
+                      ? [
+                          "The beginning",
+                          "Joining Nilva",
+                          "Building forward",
+                          "Still creating",
+                        ]
+                      : [
+                          "شروع مسیر",
+                          "پیوستن به نیلوا",
+                          "ادامه ساختن",
+                          "همچنان در حال خلق",
+                        ])[i]
+                  }
+                </h3>
+                <p>
+                  {
+                    (locale === "en"
+                      ? [
+                          "The start of my development journey.",
+                          "Working as a front-end developer at Nilva.",
+                          "Continuing my work in front-end development.",
+                          "Bringing my work together. Exploring what comes next.",
+                        ]
+                      : [
+                          "شروع مسیر من در دنیای توسعه.",
+                          "فعالیت به‌عنوان توسعه‌دهنده فرانت‌اند در نیلوا.",
+                          "ادامه فعالیت و تجربه‌اندوزی در توسعه فرانت‌اند.",
+                          "جمع‌آوری تجربه‌ها و پروژه‌ها؛ و کشف قدم بعدی.",
+                        ])[i]
+                  }
+                </p>
+              </li>
+            ))}
+          </ol>
         </section>
         <section
           className="about-section section"
@@ -186,9 +245,11 @@ export function Portfolio({ locale }: { locale: Locale }) {
         </section>
         <section
           className="toolkit section wrap"
+          id="skills"
           aria-labelledby="toolkit-heading"
         >
           <h2 id="toolkit-heading">{t.toolkit}</h2>
+          <SkillPapers locale={locale} />
           <div className="skills-grid">
             {[
               {

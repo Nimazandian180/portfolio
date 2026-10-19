@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-19T10:00:00Z",
+  "title": "Design System: Nima Zandian Portfolio",
+  "extensions": {
+    "motion": [{"name":"loader-exit","value":"opacity 0.4s ease, visibility 0.4s ease","purpose":"Reveal the site after scene readiness."}],
+    "breakpoints": [{"name":"mobile","value":"720px"},{"name":"tablet","value":"1050px"},{"name":"wide","value":"1600px"}]
+  },
+  "narrative": {
+    "northStar": "A dark developer studio",
+    "overview": "Let locally modeled 3D and real projects carry the experience.",
+    "keyCharacteristics": ["Near-black surfaces", "Mint accents", "Local bilingual fonts", "Horizontal project exploration"],
+    "dos": ["Preserve truthful project content", "Honor reduced motion"],
+    "donts": ["Do not fabricate project milestones", "Do not block content on a failed scene"]
+  }
+}

@@ -21,6 +21,18 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={locale === "fa" ? "rtl" : "ltr"}>
       <head>
+        <link
+          rel="preload"
+          href={assetPath(
+            `/fonts/${locale === "fa" ? "vazirmatn" : "geist"}.woff2`,
+          )}
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <noscript>
+          <style>{`.loading-screen{display:none!important}.scene-fallback{display:flex!important}`}</style>
+        </noscript>
         <style>{`@font-face{font-family:Geist;src:url("${assetPath("/fonts/geist.woff2")}") format("woff2");font-style:normal;font-weight:100 900;font-display:swap}@font-face{font-family:Vazirmatn;src:url("${assetPath("/fonts/vazirmatn.woff2")}") format("woff2");font-style:normal;font-weight:100 900;font-display:swap}`}</style>
       </head>
       <body>{children}</body>

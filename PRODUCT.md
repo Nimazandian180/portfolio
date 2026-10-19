@@ -11,7 +11,7 @@ Show Nima's real projects and contributions; let visitors contact him and downlo
 ## Capabilities and Constraints
 English and Persian routes, responsive layouts, seven projects, truthful live/planned/internal statuses. No fabricated metrics, testimonials, screenshots, or external links. User approved implementation and explicitly asked for no repeated approvals.
 ## Brand Commitments
-Warm off-white, bold typography, subtle animations. English/Persian bilingual design approved.
+Dark theme with animated 3D hands typing on a keyboard, a horizontal project slider, and a 2023–2026 development timeline requested October 2026. English/Persian bilingual design retained.
 ## Evidence on Hand
 ../final_update/Nima_Zandian_Resume_EN.pdf and Persian equivalent. Resume content and conversation supply durations and outcomes. No actual product screenshots or portrait supplied.
 ## Product Principles

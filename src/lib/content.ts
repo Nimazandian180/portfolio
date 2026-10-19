@@ -119,7 +119,7 @@ export const projects: Project[] = [
         "Built a personal portfolio website for an individual client, bringing their professional presence to the web.",
     },
     fa: {
-      name: "شاه‌داعی",
+      name: "شهدایی",
       description: "یک وب‌سایت شخصی؛ فضایی برای معرفی کار و هویت حرفه‌ای.",
       contribution:
         "برای یک مشتری شخصی وب‌سایت پورتفولیو ساختم تا حضور حرفه‌ای خود را در وب معرفی کند.",
@@ -151,14 +151,14 @@ export const copy = {
     about: "About",
     contact: "Contact",
     resume: "Resume",
-    headline: ["Thoughtful interfaces.", "Real-world impact."],
+    headline: ["Ideas are just ideas.", "Until we code them into reality."],
     intro:
       "I’m Nima, a front-end developer turning complex ideas into intuitive web experiences with React, Next.js, and a little attention to the details.",
     viewWork: "Explore my work",
     sayHello: "Let’s talk",
     based: "React · Next.js · TypeScript",
     illustration: "An interface study, in motion.",
-    selected: "Built with purpose.",
+    selected: "Selected work.",
     workIntro:
       "Consumer products, internal tools, and independent work. Here’s where I’ve put my code to work.",
     details: "My contribution",
@@ -207,14 +207,14 @@ export const copy = {
     about: "درباره من",
     contact: "تماس",
     resume: "رزومه",
-    headline: ["رابط‌های فکرشده.", "اثر در دنیای واقعی."],
+    headline: ["ایده‌ها فقط ایده‌اند.", "تا با کد به واقعیت تبدیلشان کنیم."],
     intro:
       "من نیما هستم؛ توسعه‌دهنده فرانت‌اند. ایده‌های پیچیده را با React، Next.js و توجه به جزئیات، به تجربه‌های ساده و کاربردی تبدیل می‌کنم.",
     viewWork: "دیدن پروژه‌ها",
     sayHello: "گفت‌وگو کنیم",
     based: "React · Next.js · TypeScript",
     illustration: "مطالعه‌ای از رابط کاربری، در حرکت.",
-    selected: "ساخته‌شده با هدف.",
+    selected: "پروژه‌های منتخب.",
     workIntro:
       "محصولات کاربرمحور، ابزارهای داخلی و پروژه‌های مستقل؛ جاهایی که کدهایم به کار آمده‌اند.",
     details: "نقش من در پروژه",
